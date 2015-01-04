@@ -3,7 +3,9 @@ FancyWorldMap Plugin
 
 Author: Mushtaq Ali
 
-	FancyWorldMap Plugin is an extended version of jqvmap and jvectormap. Though it is incomplete and in development but may help others who are trying to achieve the things I wanted. Cheers.
+	FancyWorldMap Plugin is an extended version of jqvmap and jvectormap. Though it is 
+	incomplete and in development but may help others who are trying to achieve 
+	the things I wanted. Cheers.
 
 
 Usefull Resources : 
