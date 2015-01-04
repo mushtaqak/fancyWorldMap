@@ -13,6 +13,7 @@ Usefull Resources :
 
 
 Usage : 	
+
 	1. To create map,  click Create Map 
     2. To change mode (NOTE : in View Mode , you can not add markers, you can only view map, while in Interactive mode you can add markers and hover and zoom in/out map and have map functionality, click View Map in View/Interactive Mode  
     3. To add markers, click Add All Markers 
@@ -28,7 +29,9 @@ Usage :
     13. To remove all, click Remove All 
 
 Flow: 	
+
 	Follow the flow to get used the plugin and understand the funtionality:
+	
 	Create map, 
 	Add markers, 
 	([optional]remove markers to test then add markers again), 
