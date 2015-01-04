@@ -12,14 +12,8 @@ Usefull Resources :
   https://github.com/bjornd/jvectormap
 
 
-Usage : 
-	
-	Follow the flow to get used the plugin and understand the funtionality.
-	
-	Flow: Create map, add markers, ([optional]remove markers to test then add markers again), draw sample points line, 
-      ([optional] click on some markers, regions/countries to select them, hover over marker and regions/countries ), draw selected markers lines, ([optiona] clear selected regions/countries), ([optiona] clear selected markers), ([optiona] clear drawn lines), ([optiona] reset map only), ([optiona] reset all data i.e map and lines), ([optiona] remove map only), ([optiona] remove all i.e map and lines)
-    
-    1. To create map,  click Create Map 
+Usage : 	
+	1. To create map,  click Create Map 
     2. To change mode (NOTE : in View Mode , you can not add markers, you can only view map, while in Interactive mode you can add markers and hover and zoom in/out map and have map functionality, click View Map in View/Interactive Mode  
     3. To add markers, click Add All Markers 
     4. To remove markers, click Remove All Markers 
@@ -32,6 +26,22 @@ Usage :
     11. To reset all data, click Reset All 
     12. To remove map only. (NOTE) it will only remove map not lines, click Remove Map 
     13. To remove all, click Remove All 
+
+Flow: 	
+	Follow the flow to get used the plugin and understand the funtionality:
+	Create map, 
+	Add markers, 
+	([optional]remove markers to test then add markers again), 
+	Draw sample points line, 
+  	([optional] click on some markers, regions/countries to select them, hover over marker and regions/countries ), 
+  	Draw selected markers lines, 
+  	([optiona] clear selected regions/countries), 
+  	([optiona] clear selected markers), 
+  	([optiona] clear drawn lines), 
+  	([optiona] reset map only), 
+  	([optiona] reset all data i.e map and lines), 
+  	([optiona] remove map only), 
+  	([optiona] remove all i.e map and lines)
 
 
 Sample Functions :
