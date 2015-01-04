@@ -1,0 +1,43 @@
+#map {
+      height: 400px;
+    }
+
+    .mapContainer{
+      position: relative;
+      top: 10px;
+      left: 10px;
+      width: 1280px;
+      height: 400px;
+    }
+
+    .map{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 1280px;
+      z-index: 1;
+    }
+
+    .svgMapOverlay{
+      height: 400px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 1280px;
+      z-index: 10;      
+    }
+
+    .instructions{
+      background: #777;
+      color: #FFF;
+      padding: 10px;
+      border: 1px #000 solid;
+      border-radius: 5px;
+    }
+    .instructions span{
+      font-size: 12px;
+    }
+    .instructions p{
+      margin: 5px 0;
+      font-size: 12px;
+    }

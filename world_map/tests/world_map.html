@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>World Map by Mushtaq Ali</title>
+    <link rel="stylesheet" media="all" href="../jquery-jvectormap.css"/>
+  <style>
+
+    #map {
+      height: 400px;
+    }
+
+    .mapContainer{
+      position: relative;
+      top: 10px;
+      left: 10px;
+      width: 1280px;
+      height: 400px;
+    }
+
+    .map{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 1280px;
+      z-index: 1;
+    }
+
+    .svgMapOverlay{
+      height: 400px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 1280px;
+      z-index: 10;      
+    }
+
+    .instructions{
+      background: #777;
+      color: #FFF;
+      padding: 10px;
+      border: 1px #000 solid;
+      border-radius: 5px;
+    }
+    .instructions span{
+      font-size: 12px;
+    }
+    .instructions p{
+      margin: 5px 0;
+      font-size: 12px;
+    }
+  </style>
+
+  <script src="assets/jquery-1.8.2.js"></script>
+  <script src="../jquery-jvectormap.js"></script>
+  <script src="../jquery-mousewheel.js"></script>
+
+  <script src="../lib/jvectormap.js"></script>
+
+  <script src="../lib/abstract-element.js"></script>
+  <script src="../lib/abstract-canvas-element.js"></script>
+  <script src="../lib/abstract-shape-element.js"></script>
+
+  <script src="../lib/svg-element.js"></script>
+  <script src="../lib/svg-group-element.js"></script>
+  <script src="../lib/svg-canvas-element.js"></script>
+  <script src="../lib/svg-shape-element.js"></script>
+  <script src="../lib/svg-path-element.js"></script>
+  <script src="../lib/svg-circle-element.js"></script>
+
+  <script src="../lib/vml-element.js"></script>
+  <script src="../lib/vml-group-element.js"></script>
+  <script src="../lib/vml-canvas-element.js"></script>
+  <script src="../lib/vml-shape-element.js"></script>
+  <script src="../lib/vml-path-element.js"></script>
+  <script src="../lib/vml-circle-element.js"></script>
+
+  <script src="../lib/vector-canvas.js"></script>
+  <script src="../lib/simple-scale.js"></script>
+  <script src="../lib/ordinal-scale.js"></script>
+  <script src="../lib/numeric-scale.js"></script>
+  <script src="../lib/color-scale.js"></script>
+  <script src="../lib/proj.js"></script>
+
+  <script src="../lib/svg.js"></script>
+  <script src="../lib/svg.path.js"></script>
+  <script src="../lib/world-map.js"></script>
+  <script src="assets/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="../lib/jquery.fancymap.js"></script>
+  <script>  
+
+    $(function(){
+      var markersData = [
+        {latLng: [40.66, -73.56], name: 'Marker1', style: {r: 8, fill: 'yellow'}},
+        {latLng: [41.52, -87.37], name: 'Marker2', style: {fill: 'red', r: 10}},
+        {latLng: [35.66, -73.56], name: 'Marker3', style: {r: 8, fill: 'yellow'}},
+        {latLng: [30.52, -87.37], name: 'Marker4', style: {fill: 'red', r: 10}},
+        {latLng: [41.90, 12.45], name: 'Vatican City'},
+        {latLng: [43.73, 7.41], name: 'Monaco'},
+        {latLng: [-0.52, 166.93], name: 'Nauru'},
+        {latLng: [-8.51, 179.21], name: 'Tuvalu'},
+        {latLng: [43.93, 12.46], name: 'San Marino'},
+        {latLng: [47.14, 9.52], name: 'Liechtenstein'},
+        {latLng: [7.11, 171.06], name: 'Marshall Islands'},
+        {latLng: [17.3, -62.73], name: 'Saint Kitts and Nevis'},
+        {latLng: [3.2, 73.22], name: 'Maldives'},
+        {latLng: [35.88, 14.5], name: 'Malta'},
+        {latLng: [12.05, -61.75], name: 'Grenada'},
+        {latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines'},
+        {latLng: [13.16, -59.55], name: 'Barbados'},
+        {latLng: [17.11, -61.85], name: 'Antigua and Barbuda'},
+        {latLng: [-4.61, 55.45], name: 'Seychelles'},
+        {latLng: [7.35, 134.46], name: 'Palau'},
+        {latLng: [42.5, 1.51], name: 'Andorra'},
+        {latLng: [14.01, -60.98], name: 'Saint Lucia'},
+        {latLng: [6.91, 158.18], name: 'Federated States of Micronesia'},
+        {latLng: [1.3, 103.8], name: 'Singapore'},
+        {latLng: [1.46, 173.03], name: 'Kiribati'},
+        {latLng: [-21.13, -175.2], name: 'Tonga'},
+        {latLng: [15.3, -61.38], name: 'Dominica'},
+        {latLng: [-20.2, 57.5], name: 'Mauritius'},
+        {latLng: [26.02, 50.55], name: 'Bahrain'},
+        {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
+      ],
+      values1 = [1, 2, 3, 4],
+      values2 = [1, 2, 3, 4];
+
+      var mapObj = $.fancyWorldMap({
+        elm: '#map',
+        svgContainer : { id : 'svgMapOverlay', fill : 'none', stroke_color: 'green', stroke_width: 2, width: '1280', height: '400'},
+        data: 'Fancy Maps Content',
+        markers: markersData
+      });
+
+      // CODE : not required as for now but may be needed ahead
+      // Add Single Marker    :  mapObj.addMarker( index, markers[index], [values1[index], values2[index]] );
+      // Remove Single Marker :  mapObj.removeMarkers( [index] );
+
+      // TODO: 
+      // 1. Draw arrow on direction
+      // DONE : combine line drawing and (marker addition and map zoom in/out and hover functionality) 
+      // DONE: bug: not getting selectedMarkers, need to solve this issue. 
+      // And Testing and fixes as well
+
+      // saved, 25-01-2014-12.32.a.m, runs.
+      
+      // 1. create map
+      mapDrawn = false;
+      $('#create-map').click(function(){
+        if(!mapDrawn){
+          mapObj.createMap();
+          mapDrawn = true;
+        }
+      });
+
+      // 2. draw line b/w two points
+      lineDrawn = false;
+      $('#sample-point-line').click(function(){
+        if(mapDrawn){
+          var drawMarkersData = [
+            {name:'New York', latLng:[40.710833,-74.002533]},
+            {name: 'Singapore', latLng: [1.3, 103.8]}
+          ];  
+          mapObj.drawPointLines(drawMarkersData);
+          lineDrawn = true;
+        }
+      });      
+
+      // 3. draw line of selected markers
+      $('#selected-marker-line').click(function(){
+        if(mapDrawn){
+          mapObj.drawSelectedMarkerLines();
+          lineDrawn = true;
+        }
+      });
+      
+      // 4. Add markers from data
+      $('#add-all-markers').click(function(){
+        if(mapDrawn){
+          mapObj.createMarkers(markersData, []);
+        }
+      });
+
+      // 5. remove all markers
+      $('#remove-all-markers').click(function(){
+        if(mapDrawn){
+          mapObj.removeMarkers();
+        }
+      });
+
+      // 6. remove drawn lines
+      $('#clear-drawn-lines').click(function(){
+        if(lineDrawn && mapDrawn){
+          mapObj.clearLines();
+          lineDrawn = false;
+        }
+      });
+
+      // 7. unset selected countries data from window
+      $('#clear-selected-regions').click(function(){
+        if(mapDrawn){
+          mapObj.clearAllSelectedRegions();
+        }
+      });
+
+      // 8. remove selected marker data from window
+      $('#clear-selected-markers').click(function(){
+        if(mapDrawn){
+          mapObj.clearAllSelectedMarkers();
+        }
+      });
+
+      // 9. reset map data only - reset map like zoom in/out as defaut
+      $('#reset-map').click(function(){
+        if(mapDrawn){
+          mapObj.resetMap();
+        }
+      });
+
+      // 10. reset all map and lines
+      $('#reset-all').click(function(){
+        if(mapDrawn){
+          mapObj.resetAll();
+        }
+      });
+
+      // 11. remove map only
+      $('#remove-map').click(function(){
+        if(mapDrawn){
+          mapObj.removeMap();
+          mapDrawn = false;
+        }
+      });
+
+      // 12. remove map only
+      $('#remove-all').click(function(){
+        if(mapDrawn){
+          mapObj.removeMap();
+          mapObj.clearLines();
+          mapDrawn = false;
+          lineDrawn = false;
+        }
+      });
+
+      // 13. map mode functionality
+      $('#map-mode').click(function(){
+        mape_mode = $(this).data('mode') ;
+        // change to view mode
+        if (mape_mode==0) {
+          $('#mapContainer').addClass('mapContainer');
+          $('#map').addClass('map');
+          $('#svgMapOverlay').addClass('svgMapOverlay');
+          $(this).data('mode', 1);
+          $(this).val('View Map in Interactive Mode');
+        }
+        else { // change to interactive mode
+          $('#mapContainer').removeClass('mapContainer');
+          $('#map').removeClass('map');
+          $('#svgMapOverlay').removeClass('svgMapOverlay');         
+          $(this).data('mode', 0);
+          $(this).val('View Map in View Mode');
+        }
+      });   
+
+      // 14. instructions
+      $('.instructions p').hide(); 
+      $('#map-instructions').click(function(){
+        instr_state = $(this).data('state') ;
+        // show insructions
+        if (instr_state==0) {
+          $('.instructions p').show();            
+          $(this).data('state', 1);
+          $(this).val('- Instructions');
+        }
+        else { // hide insructions
+          $('.instructions p').hide();            
+          $(this).data('state', 0);
+          $(this).val('+ Instructions');
+        }
+      });   
+
+
+    });
+  </script>
+</head>
+<body>
+
+  <input type="button" value="+ Instructions" id="map-instructions" data-state="0"/>
+  <div class="instructions">
+    <span>Instructions to use Maps</span>
+    <p> 
+        1. <i>To create map</i>,  click <strong>Create Map</strong> <br>
+        2. <i>To change mode (NOTE : in View Mode , you can not add markers, you can only view map, while in Interactive mode you can add markers and hover and zoom in/out map and have map functionality</i>, click <strong>View Map in View/Interactive Mode </strong> <br>
+        3. <i>To add markers</i>, click <strong>Add All Markers</strong> <br>
+        4. <i>To remove markers</i>, click <strong>Remove All Markers</strong> <br>
+        5. <i>To create a line between two coordinates ( sample data)</i>, click <strong>Sample Points Line</strong> <br>
+        6. <i>To create a line between selected markers</i>, click <strong>Marker</strong> <br>
+        7. <i>To clear lines drawn</i>, click <strong>Clear Drawn Lines</strong> <br>
+        8. <i>To clear selected markers</i>, click <strong>Clear Selected Markers</strong> <br>
+        9. <i>To clear selected regions/counries</i>, click <strong>Clear Selected Regions</strong> <br>
+        10. <i>To reset map only (NOTE) It will reset map like zoom in/out ratio as initially drawn</i>, click <strong>Reset Map</strong> <br>
+        11. <i>To reset all data</i>, click <strong>Reset All</strong> <br>
+        12. <i>To remove map only. (NOTE) it will only remove map not lines</i>, click <strong>Remove Map</strong> <br>
+        13. <i>To remove all</i>, click <strong>Remove All</strong> <br>
+    </p>
+    <p>
+      Flow: Create map, add markers, ([optional]remove markers to test then add markers again), draw sample points line, 
+      ([optional] click on some markers, regions/countries to select them, hover over marker and regions/countries ), draw selected markers lines, ([optiona] clear selected regions/countries), ([optiona] clear selected markers), ([optiona] clear drawn lines), ([optiona] reset map only), ([optiona] reset all data i.e map and lines), ([optiona] remove map only), ([optiona] remove all i.e map and lines)
+    </p>
+  </div>
+  <!-- MENU -->
+  <!-- <ul class="list-markers">
+    <li data-marker-index="0"><label><input checked type="checkbox"/> Marker 1</label></li>
+    <li data-marker-index="1"><label><input checked type="checkbox"/> Marker 2</label></li>
+    <li data-marker-index="2"><label><input checked type="checkbox"/> Marker 3</label></li>
+    <li data-marker-index="3"><label><input checked type="checkbox"/> Marker 4</label></li>
+  </ul> -->
+  <div class="menu">
+    <input type="button" value="Create Map" id="create-map"/>
+    <input type="button" value="View Map in View Mode" id="map-mode" data-mode="0"/>
+    <input type="button" value="Add All Markers" id="add-all-markers"/>
+    <input type="button" value="Remove All Markers" id="remove-all-markers"/>    
+    <input type="button" value="Draw SamplePoints Lines" id="sample-point-line"/>
+    <input type="button" value="Draw Marker Lines" id="selected-marker-line"/>
+    <input type="button" value="Clear Drawn Lines" id="clear-drawn-lines"/>
+    <input type="button" value="Clear Selected Regions" id="clear-selected-regions"/>
+    <input type="button" value="Clear Selected Markers" id="clear-selected-markers"/>
+    <input type="button" value="Reset Map" id="reset-map"/>    
+    <input type="button" value="Reset All" id="reset-all"/>
+    <input type="button" value="Remove Map" id="remove-map"/>
+    <input type="button" value="Remove All" id="remove-all"/>
+  </div>
+
+  <div id="mapContainer">
+    <div id="map"></div>
+    <div id="svgMapOverlay"></div>
+  </div>
+</body>
+</html>
