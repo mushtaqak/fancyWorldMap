@@ -15,7 +15,7 @@ Usefull Resources :
 Usage : 	
 
 	1. To create map,  click Create Map 
-    2. To change mode (NOTE : in View Mode , you can not add markers, you can only view map, while in Interactive mode you can add markers and hover and zoom in/out map and have map functionality, click View Map in View/Interactive Mode  
+    2. To change mode click View Map in View/Interactive Mode  
     3. To add markers, click Add All Markers 
     4. To remove markers, click Remove All Markers 
     5. To create a line between two coordinates ( sample data), click Sample Points Line 
@@ -23,20 +23,27 @@ Usage :
     7. To clear lines drawn, click Clear Drawn Lines 
     8. To clear selected markers, click Clear Selected Markers 
     9. To clear selected regions/counries, click Clear Selected Regions 
-    10. To reset map only (NOTE) It will reset map like zoom in/out ratio as initially drawn, click Reset Map 
+    10. To reset map only click Reset Map. (NOTE) It will reset map like zoom in/out ratio, 
+    	
     11. To reset all data, click Reset All 
     12. To remove map only. (NOTE) it will only remove map not lines, click Remove Map 
     13. To remove all, click Remove All 
 
+    (NOTE : In View Mode , you can not add markers, you can only view map, 
+    	while in Interactive mode you can add markers and hover and zoom in/out map)
+
 Flow: 	
 
 	Follow the flow to get used the plugin and understand the funtionality:
-	
+
 	Create map, 
 	Add markers, 
 	([optional]remove markers to test then add markers again), 
 	Draw sample points line, 
-  	([optional] click on some markers, regions/countries to select them, hover over marker and regions/countries ), 
+  	([optional] click on some markers),
+  	([optional] regions/countries to select them),
+  	([optional] hover over marker
+  	([optional] hover over regions/countries), 
   	Draw selected markers lines, 
   	([optiona] clear selected regions/countries), 
   	([optiona] clear selected markers), 
