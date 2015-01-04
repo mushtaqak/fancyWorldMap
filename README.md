@@ -1,20 +1,16 @@
-FancyWorldMap : A JS jqvmap-jVectorMap-extended plugin
+FancyWorldMap Plugin
 ======================================================
 
 Author: Mushtaq Ali
 
-I have used jqvmap and jVectorMap to create a world map based on https://github.com/manifestinteractive/jqvmap. Though it is incomplete but may help others who are trying to achieve the things I wanted. Cheers.
+I have used jqvmap and jVectorMap to create a world map. Though it is incomplete but may help others who are trying to achieve the things I wanted. FancyWorldMap Plugin is an extended version of jqvmap and jvectormap. I thought this may help others trying to achieve the same functionality. Cheers.
 
-
-Description : 
-
-  FancyWorldMap Plugin is an extended version of jqvmap and jvectormap. I thought this may help others trying to achieve the same 
-  functionality.
 
 Usefull Resources : 
-  https://github.com/manifestinteractive/jqvmap/issues/113#issuecomment-68411608
-  https://github.com/manifestinteractive/jqvmap
+  https://github.com/manifestinteractive/jqvmap/issues/113#issuecomment-68411608 , 
+  https://github.com/manifestinteractive/jqvmap 
   https://github.com/bjornd/jvectormap
+
 
 Usage : 
 	
@@ -234,6 +230,6 @@ What is left to do :
     1. calculate angle and correct direction for arrow head
     2. clear storage of selected markers and set some conditions if local storage true
     3. if marker selected before show image as well as text/coords finish
-    
+
 
 Any feedback or suggestion would be appreciated. Thanks      
