@@ -3,12 +3,12 @@ FancyWorldMap Plugin
 
 Author: Mushtaq Ali
 
-I have used jqvmap and jVectorMap to create a world map. Though it is incomplete but may help others who are trying to achieve the things I wanted. FancyWorldMap Plugin is an extended version of jqvmap and jvectormap. I thought this may help others trying to achieve the same functionality. Cheers.
+I have used jqvmap and jVectorMap to create a world map. Though it is incomplete and in development but may help others who are trying to achieve the things I wanted. FancyWorldMap Plugin is an extended version of jqvmap and jvectormap. Cheers.
 
 
 Usefull Resources : 
   https://github.com/manifestinteractive/jqvmap/issues/113#issuecomment-68411608 , 
-  https://github.com/manifestinteractive/jqvmap 
+  https://github.com/manifestinteractive/jqvmap,  
   https://github.com/bjornd/jvectormap
 
 
