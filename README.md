@@ -95,7 +95,17 @@ Sample Functions :
       // 0. Initiallize my fancyWorldMap Plugin 
       var mapObj = $.fancyWorldMap({
         elm: '#map',
-        svgContainer : { id : 'svgMapOverlay', fill : 'none', arrow_fill: 'yellow', stroke_color: 'green', arrow_color: 'yellow', arrow_size: 10, stroke_width: 2, width: '1280', height: '400'},
+        svgContainer : { 
+        	id : 'svgMapOverlay', 
+        	fill : 'none', 
+        	arrow_fill: 'yellow', 
+        	stroke_color: 'green', 
+        	arrow_color: 'yellow', 
+        	arrow_size: 10, 
+        	stroke_width: 2, 
+        	width: '1280', 
+        	height: '400'
+        	},
         data: 'Fancy Maps Content',
         markers: markersData
       });
