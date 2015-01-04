@@ -23,8 +23,7 @@ Usage :
     7. To clear lines drawn, click Clear Drawn Lines 
     8. To clear selected markers, click Clear Selected Markers 
     9. To clear selected regions/counries, click Clear Selected Regions 
-    10. To reset map only click Reset Map. (NOTE) It will reset map like zoom in/out ratio, 
-    	
+    10. To reset map only click Reset Map. This resets map like zoom in/out ratio    	
     11. To reset all data, click Reset All 
     12. To remove map only. (NOTE) it will only remove map not lines, click Remove Map 
     13. To remove all, click Remove All 
